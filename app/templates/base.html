@@ -55,7 +55,7 @@
     }
 
     nav ul li a:hover {
-        background-color: #fcfeff;
+        background-color: #ffee02;
     }
 
     nav ul li.active a {
@@ -72,9 +72,23 @@
   <header>
     <nav>
       <ul>
-        <li><a href="{% url 'cars_list' %}">Carros</a></li>
+        {% if user.is_authenticated  %}
+        <li>Olá {{user.username }}</li>
         <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
-      </ul>
+        {% endif %}
+
+
+        {% if not user.is_authenticated %}
+        <li><a href="{% url 'register' %}">Cadastrar-se</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+
+        {% endif %}
+
+        <li><a href="{% url 'cars_list' %}">Carros</a></li>
+        
+        {% if user.is_authenticated  %}
+        <li><a href="{% url 'logout' %}">Sair</a></li>
+        {% endif %}
     </nav>
   </header>
 
