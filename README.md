@@ -1,58 +1,134 @@
-🚗 Concessionária Web
+# 🚗 Concessionária Web
 
-Bem-vindo(a) ao repositório da Concessionária Web, um projeto pessoal que criei com o objetivo de replicar um site moderno e funcional para uma concessionária de veículos. Desenvolvi este projeto para o meu portfólio, mostrando minhas habilidades em desenvolvimento web, design responsivo e integração com backend.
+Bem-vindo(a) ao repositório da **Concessionária Web**, um projeto pessoal desenvolvido para simular um site moderno e funcional de uma concessionária de veículos. Este projeto faz parte do meu portfólio e tem como objetivo demonstrar minhas habilidades com desenvolvimento web, design responsivo e integração com APIs modernas, como a da OpenAI.
 
-🛠️ Tecnologias Utilizadas
+---
 
-Frontend: HTML5, CSS3, JavaScript, Django (templates)
+## 🛠️ Tecnologias Utilizadas
 
-Backend: Python, Django
+**Frontend:**
+- HTML5  
+- CSS3  
+- JavaScript  
+- Django (Templates)
 
-Banco de Dados: SQLite
+**Backend:**
+- Python  
+- Django
 
-✅ Funcionalidades
+**Banco de Dados:**
+- SQLite (padrão, simples de configurar localmente)
 
-Página inicial com destaques e promoções de veículos
+**Integrações:**
+- OpenAI API (para recursos com inteligência artificial)
 
-Lista de veículos com filtros por categoria, marca e faixa de preço
+---
 
-Página detalhada para cada veículo
+## ✅ Funcionalidades
 
-Formulário de contato e simulação de financiamento
+- Página inicial com destaques e promoções de veículos  
+- Lista de veículos com filtros por categoria, marca e faixa de preço  
+- Página detalhada para cada veículo  
+- Formulário de contato e simulação de financiamento  
+- Área administrativa (em desenvolvimento)  
+- Design totalmente responsivo, adaptado para dispositivos móveis  
+- CRUD completo de veículos com autenticação  
+- Uso de **signals** do Django para lógica de banco de dados  
+- Integração com **OpenAI API** para recursos inteligentes:
 
-Área administrativa (ainda em desenvolvimento / opcional)
+  - Chatbot para tirar dúvidas
+  - Sugestões de veículos conforme o perfil do usuário
+  - Explicações automáticas sobre modelos, financiamento e processos
 
-Design totalmente responsivo, adaptado para dispositivos móveis
+---
 
-CRUD completo de veículos: posso criar, visualizar, editar e excluir veículos usando visualizações protegidas por autenticação, seja pelo Django Admin ou por views customizadas
+## 🤖 Integração com OpenAI
 
-Utilização de signals para modelagem do banco de dados e organização das operações relacionadas
+A IA é utilizada no projeto para melhorar a experiência do usuário por meio de respostas inteligentes e automatizadas.
 
-Este projeto tem como foco meu aprendizado contínuo e a prática dos conceitos de desenvolvimento web. Também é uma ótima forma de demonstrar meu progresso e dedicação, pois está sendo construído do zero com atenção às boas práticas de código e à experiência do usuário.
+### Como configurar a chave da OpenAI
 
-Como clonar este repositório
-Para começar a usar o projeto localmente, basta clonar o repositório do GitHub. Veja o passo a passo:
+1. Crie uma conta em: [https://platform.openai.com](https://platform.openai.com)
+2. Gere uma **API Key** na aba **API Keys**
+3. Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
 
-Abra o terminal (ou prompt de comando) no seu computador.
+```env
+OPENAI_API_KEY=sk-sua-chave-aqui
 
-Navegue até a pasta onde deseja salvar o projeto, usando o comando cd. Por exemplo:
+No seu código Python, utilize o dotenv para carregar a chave:
 
-bash
+python
 Copiar
 Editar
-cd ~/Projetos
-Clone o repositório com o comando:
+from dotenv import load_dotenv
+import os
+import openai
 
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+Pronto! Agora você pode chamar a API da OpenAI para processar requisições com IA.
+
+💻 Como rodar o projeto localmente
+1. Clone o repositório
 bash
 Copiar
 Editar
 git clone https://github.com/kleitonmac/carros-dev.git
-Esse comando fará o download de todo o código para uma pasta chamada carros-dev dentro do diretório atual.
-
-Acesse a pasta do projeto:
-
+cd carros-dev
+2. Crie um ambiente virtual
 bash
 Copiar
 Editar
-cd carros-dev
-A partir daqui, você pode criar um ambiente virtual, instalar as dependências do Django e rodar o projeto localmente.
+# Linux/macOS
+python3 -m venv venv
+source venv/bin/activate
+
+# Windows
+python -m venv venv
+venv\Scripts\activate
+3. Instale as dependências
+bash
+Copiar
+Editar
+pip install -r requirements.txt
+4. Configure o ambiente
+Crie um arquivo .env com suas variáveis (como a chave da OpenAI).
+
+5. Execute as migrações
+bash
+Copiar
+Editar
+python manage.py migrate
+6. Inicie o servidor de desenvolvimento
+bash
+Copiar
+Editar
+python manage.py runserver
+Acesse http://127.0.0.1:8000 no navegador para ver o projeto em funcionamento.
+
+🚀 Em desenvolvimento
+Área administrativa personalizada
+
+Melhorias no sistema de financiamento
+
+Dashboard de vendas
+
+Login com autenticação social (Google, Facebook)
+
+📫 Contato
+Caso tenha dúvidas, sugestões ou queira colaborar com o projeto, entre em contato comigo:
+
+GitHub: kleitonmac
+
+Email: seuemail@exemplo.com
+
+📝 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+yaml
+Copiar
+Editar
+
+---
+
+Se quiser, posso gerar esse arquivo para você em `.md` ou adicionar instruções para incluir um badge, imagem, ou GIF demonstrando o sistema. Deseja algum desses extras?
