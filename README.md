@@ -35,7 +35,6 @@ Bem-vindo(a) ao repositório da **Concessionária Web**, um projeto pessoal dese
 - CRUD completo de veículos com autenticação  
 - Uso de **signals** do Django para lógica de banco de dados  
 - Integração com **OpenAI API** para recursos inteligentes:
-
   - Chatbot para tirar dúvidas
   - Sugestões de veículos conforme o perfil do usuário
   - Explicações automáticas sobre modelos, financiamento e processos
@@ -54,31 +53,33 @@ A IA é utilizada no projeto para melhorar a experiência do usuário por meio d
 
 ```env
 OPENAI_API_KEY=sk-sua-chave-aqui
+```
 
-No seu código Python, utilize o dotenv para carregar a chave:
+4. No seu código Python, use o seguinte padrão para carregar a chave:
 
-python
-Copiar
-Editar
+```python
 from dotenv import load_dotenv
 import os
 import openai
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-Pronto! Agora você pode chamar a API da OpenAI para processar requisições com IA.
+```
 
-💻 Como rodar o projeto localmente
-1. Clone o repositório
-bash
-Copiar
-Editar
+---
+
+## 💻 Como rodar o projeto localmente
+
+### 1. Clone o repositório
+
+```bash
 git clone https://github.com/kleitonmac/carros-dev.git
 cd carros-dev
-2. Crie um ambiente virtual
-bash
-Copiar
-Editar
+```
+
+### 2. Crie um ambiente virtual
+
+```bash
 # Linux/macOS
 python3 -m venv venv
 source venv/bin/activate
@@ -86,49 +87,62 @@ source venv/bin/activate
 # Windows
 python -m venv venv
 venv\Scripts\activate
-3. Instale as dependências
-bash
-Copiar
-Editar
+```
+
+### 3. Instale as dependências
+
+```bash
 pip install -r requirements.txt
-4. Configure o ambiente
-Crie um arquivo .env com suas variáveis (como a chave da OpenAI).
+```
 
-5. Execute as migrações
-bash
-Copiar
-Editar
+Se ainda não estiver no `requirements.txt`, instale também:
+
+```bash
+pip install django
+pip install pillow
+pip install python-dotenv
+```
+
+> 💡 Para visualizar o banco de dados SQLite de forma amigável, recomendamos a extensão gratuita do VS Code: **SQLite Viewer**.
+
+### 4. Configure o ambiente
+
+Crie um arquivo `.env` com sua variável `OPENAI_API_KEY`.
+
+### 5. Execute as migrações
+
+```bash
 python manage.py migrate
-6. Inicie o servidor de desenvolvimento
-bash
-Copiar
-Editar
+```
+
+### 6. Inicie o servidor de desenvolvimento
+
+```bash
 python manage.py runserver
-Acesse http://127.0.0.1:8000 no navegador para ver o projeto em funcionamento.
+```
 
-🚀 Em desenvolvimento
-Área administrativa personalizada
-
-Melhorias no sistema de financiamento
-
-Dashboard de vendas
-
-Login com autenticação social (Google, Facebook)
-
-📫 Contato
-Caso tenha dúvidas, sugestões ou queira colaborar com o projeto, entre em contato comigo:
-
-GitHub: kleitonmac
-
-Email: seuemail@exemplo.com
-
-📝 Licença
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-yaml
-Copiar
-Editar
+Acesse o projeto em: [http://127.0.0.1:8000/](http://127.0.0.1:8000/login) para iniciar o login e navegar no repositorios pelas urls de new_car , cars,
 
 ---
 
-Se quiser, posso gerar esse arquivo para você em `.md` ou adicionar instruções para incluir um badge, imagem, ou GIF demonstrando o sistema. Deseja algum desses extras?
+## 🚀 Em desenvolvimento
+
+- Área administrativa personalizada  
+- Melhorias no sistema de financiamento  
+- Dashboard de vendas  
+- Login com autenticação social (Google, Facebook)
+
+---
+
+## 📫 Contato
+
+Caso tenha dúvidas, sugestões ou queira colaborar com o projeto, entre em contato comigo:
+
+- GitHub: [kleitonmac](https://github.com/kleitonmac)
+- Email: seuemail@exemplo.com
+
+---
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
