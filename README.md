@@ -1,3 +1,4 @@
+
 # 🚗 Concessionária Web
 
 Bem-vindo(a) ao repositório da **Concessionária Web**, um projeto pessoal desenvolvido para simular um site moderno e funcional de uma concessionária de veículos. Este projeto faz parte do meu portfólio e tem como objetivo demonstrar minhas habilidades com desenvolvimento web, design responsivo e integração com APIs modernas, como a da OpenAI.
@@ -105,6 +106,8 @@ pip install python-dotenv
 
 > 💡 Para visualizar o banco de dados SQLite de forma amigável, recomendamos a extensão gratuita do VS Code: **SQLite Viewer**.
 
+---
+
 ### 4. Configure o ambiente
 
 Crie um arquivo `.env` com sua variável `OPENAI_API_KEY`.
@@ -121,7 +124,17 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Acesse o projeto em: [http://127.0.0.1:8000/](http://127.0.0.1:8000/login) para iniciar o login e navegar no repositorios pelas urls de new_car , cars,
+Acesse o projeto em: [http://127.0.0.1:8000/](http://127.0.0.1:8000/login) para iniciar o login e navegar no repositório pelas URLs de `new_car`, `cars`.
+
+---
+
+### 🔽 Instalação rápida (linha direta)
+
+Caso deseje instalar todas as dependências de uma vez, use o comando:
+
+```bash
+pip install -r .\requirements.txt
+```
 
 ---
 
