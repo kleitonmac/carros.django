@@ -96,15 +96,17 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Se ainda não estiver no `requirements.txt`, instale também:
-
-```bash
-pip install django
-pip install pillow
-pip install python-dotenv
-```
-
-> 💡 Para visualizar o banco de dados SQLite de forma amigável, recomendamos a extensão gratuita do VS Code: **SQLite Viewer**.
+> 💡 Para visualizar o banco de dados Postgres faça a seguinte alterações.
+> DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carros',
+        'USER': 'User_name_Postgres',
+        'PASSWORD': 'Sua_senha',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 ---
 
