@@ -15,7 +15,7 @@ class Car(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')    #marca
     factory_year = models.IntegerField() #ano de fabricação do carro
     model_year = models.IntegerField(blank=True , null=True) # ano de modelo do carro
-    plate = models.IntegerField(max_length=10, blank=True, null=True)
+    plate = models.IntegerField(max_length=0, blank=True, null=True)
     value = models.FloatField(blank=True, null=True) # valor
     photo= models.ImageField(upload_to='cars_photos/', blank=True, null=True)# imagens que vai subir pro banco de dados e baixei o pip install pillow
     bio = models.TextField(blank=True, null=True, )
