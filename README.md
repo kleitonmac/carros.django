@@ -1,86 +1,56 @@
+🚗 Concessionária Web
+Bem-vindo(a) ao repositório da Concessionária Web , um projeto pessoal desenvolvido para simular um site moderno e funcional de uma entrega de veículos. Este projeto faz parte do meu portfólio e tem como objetivo demonstrar minhas habilidades com desenvolvimento web, design responsivo e integração com APIs modernas, como a da OpenAI.
 
-# 🚗 Concessionária Web
+🛠️ Tecnologias Utilizadas
+Front-end:
 
-Bem-vindo(a) ao repositório da **Concessionária Web**, um projeto pessoal desenvolvido para simular um site moderno e funcional de uma concessionária de veículos. Este projeto faz parte do meu portfólio e tem como objetivo demonstrar minhas habilidades com desenvolvimento web, design responsivo e integração com APIs modernas, como a da OpenAI.
+HTML5
+CSS3
+JavaScript
+Django (Modelos)
+Backend:
 
----
+Pitão
+Django
+Banco de Dados:
 
-## 🛠️ Tecnologias Utilizadas
+SQLite (padrão, simples de configurar localmente)
+Integrações:
 
-**Frontend:**
-- HTML5  
-- CSS3  
-- JavaScript  
-- Django (Templates)
-
-**Backend:**
-- Python  
-- Django
-
-**Banco de Dados:**
-- SQLite (padrão, simples de configurar localmente)
-
-**Integrações:**
-- OpenAI API (para recursos com inteligência artificial)
-
----
-
-## ✅ Funcionalidades
-
-- Página inicial com destaques e promoções de veículos  
-- Lista de veículos com filtros por categoria, marca e faixa de preço  
-- Página detalhada para cada veículo  
-- Formulário de contato e simulação de financiamento  
-- Área administrativa (em desenvolvimento)  
-- Design totalmente responsivo, adaptado para dispositivos móveis  
-- CRUD completo de veículos com autenticação  
-- Uso de **signals** do Django para lógica de banco de dados  
-- Integração com **OpenAI API** para recursos inteligentes:
-  - Chatbot para tirar dúvidas
-  - Sugestões de veículos conforme o perfil do usuário
-  - Explicações automáticas sobre modelos, financiamento e processos
-
----
-
-## 🤖 Integração com OpenAI
-
+API OpenAI (para recursos com inteligência artificial)
+✅ Funcionalidades
+Página inicial com destaques e promoções de veículos
+Lista de veículos com filtros por categoria, marca e faixa de preço
+Página detalhada para cada veículo
+Formulário de contato e simulação de financiamento
+Área administrativa (em desenvolvimento)
+Design totalmente responsivo, adaptado para dispositivos móveis
+CRUD completo de veículos com autenticação
+Uso de sinais do Django para lógica de banco de dados
+Integração com OpenAI API para recursos inteligentes:
+Chatbot para tirar dúvidas
+Sugestões de veículos conforme o perfil do usuário
+Explicações automáticas sobre modelos, financiamento e processos
+🤖 Integração com OpenAI
 A IA é utilizada no projeto para melhorar a experiência do usuário por meio de respostas inteligentes e automatizadas.
 
-### Como configurar a chave da OpenAI
-
-1. Crie uma conta em: [https://platform.openai.com](https://platform.openai.com)
-2. Gere uma **API Key** na aba **API Keys**
-3. Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
-
-```env
+Como configurar a chave do OpenAI
+Crie uma conta em: https://platform.openai.com
+Gere uma chave de API e aba API Keys
+Crie um arquivo .envna raiz do projeto com o seguinte conteúdo:
 OPENAI_API_KEY=sk-sua-chave-aqui
-```
-
-4. No seu código Python, use o seguinte padrão para carregar a chave:
-
-```python
+No seu código Python, use o seguinte padrão para carregar a chave:
 from dotenv import load_dotenv
 import os
 import openai
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-```
-
----
-
-## 💻 Como rodar o projeto localmente
-
-### 1. Clone o repositório
-
-```bash
+💻 Como rodar o projeto localmente
+1. Clonar ou repositório
 git clone https://github.com/kleitonmac/carros-dev.git
 cd carros-dev
-```
-
-### 2. Crie um ambiente virtual
-
-```bash
+2. Crie um ambiente virtual
 # Linux/macOS
 python3 -m venv venv
 source venv/bin/activate
@@ -88,74 +58,32 @@ source venv/bin/activate
 # Windows
 python -m venv venv
 venv\Scripts\activate
-```
-
-### 3. Instale as dependências
-
-```bash
+3. Instalar as dependências
 pip install -r requirements.txt
-```
+💡 Para visualizar o banco de dados Postgres faça as próximas alterações. BANCO DE DADOS = { 'default': { 'ENGINE': 'django.db.backends.postgresql', 'NAME': 'carros', 'USER': 'User_name_Postgres', 'PASSWORD': 'Sua_senha', 'HOST': 'localhost', 'PORT': '5432', } }
 
-Se ainda não estiver no `requirements.txt`, instale também:
+4. Configurar o ambiente
+Crie um arquivo .envcom sua variável OPENAI_API_KEY.
 
-```bash
-pip install django
-pip install pillow
-pip install python-dotenv
-```
-
-> 💡 Para visualizar o banco de dados SQLite de forma amigável, recomendamos a extensão gratuita do VS Code: **SQLite Viewer**.
-
----
-
-### 4. Configure o ambiente
-
-Crie um arquivo `.env` com sua variável `OPENAI_API_KEY`.
-
-### 5. Execute as migrações
-
-```bash
+5. Executar as migrações
 python manage.py migrate
-```
-
-### 6. Inicie o servidor de desenvolvimento
-
-```bash
+6. Iniciar o servidor de desenvolvimento
 python manage.py runserver
-```
+Acesse o projeto em: http://127.0.0.1:8000/ para iniciar o login e navegar no repositório pelas URLs de new_car, cars.
 
-Acesse o projeto em: [http://127.0.0.1:8000/](http://127.0.0.1:8000/login) para iniciar o login e navegar no repositório pelas URLs de `new_car`, `cars`.
-
----
-
-### 🔽 Instalação rápida (linha direta)
-
+🔽 Instalação rápida (linha direta)
 Caso deseje instalar todas as dependências de uma vez, use o comando:
 
-```bash
 pip install -r .\requirements.txt
-```
-
----
-
-## 🚀 Em desenvolvimento
-
-- Área administrativa personalizada  
-- Melhorias no sistema de financiamento  
-- Dashboard de vendas  
-- Login com autenticação social (Google, Facebook)
-
----
-
-## 📫 Contato
-
+🚀 Em desenvolvimento
+Área administrativa personalizada
+Melhorias no sistema de financiamento
+Painel de vendas
+Login com autenticação social (Google, Facebook)
+📫 Contato
 Caso tenha dúvidas, sugestões ou queira colaborar com o projeto, entre em contato comigo:
 
-- GitHub: [kleitonmac](https://github.com/kleitonmac)
-- Email: seuemail@exemplo.com
-
----
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+GitHub: kleitonmac
+E-mail: kdevprofissional@gmail.com
+📝 Licença
+Este projeto está sob licença MIT. Veja o arquivo LICENSE para mais detalhes.
