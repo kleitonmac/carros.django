@@ -154,7 +154,7 @@ pip install -r .\requirements.txt
 Caso tenha dúvidas, sugestões ou queira colaborar com o projeto, entre em contato comigo:
 
 - GitHub: [kleitonmac](https://github.com/kleitonmac)
-- Email: seuemail@exemplo.com
+- Email: kdevprofissional@gmail.com
 
 ---
 
